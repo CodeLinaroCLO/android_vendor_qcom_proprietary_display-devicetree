@@ -1,5 +1,5 @@
 ifneq ($(CONFIG_ARCH_QTI_VM), y)
-dtbo-y += display/waipio-sde.dtbo \
+dtbo-$(CONFIG_ARCH_WAIPIO) += display/waipio-sde.dtbo \
 		display/waipio-sde-display-mtp-overlay.dtbo \
 		display/waipio-sde-display-cphy-mtp-overlay.dtbo \
 		display/waipio-sde-display-cdp-overlay.dtbo \
@@ -10,6 +10,9 @@ dtbo-y += display/waipio-sde.dtbo \
 		display/waipio-sde-display-waipio-lemur-cdp-overlay.dtbo \
 		display/waipio-sde-display-waipio-lemur-mtp-overlay.dtbo \
 		display/waipio-sde-display-rumi-overlay.dtbo
+
+dtbo-$(CONFIG_ARCH_LAHAINA) += \
+		display/vili-sde-display-overlay.dtbo
 else
 dtbo-y += display/trustedvm-waipio-sde-display-mtp-overlay.dtbo \
 	  display/trustedvm-waipio-sde-display-cdp-overlay.dtbo \

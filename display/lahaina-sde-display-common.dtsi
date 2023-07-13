@@ -16,6 +16,8 @@
 #include "dsi-panel-r66451-dsc-fhd-plus-video.dtsi"
 #include "dsi-panel-r66451-dsc-fhd-plus-cmd.dtsi"
 #include "dsi-panel-r66451-dsc-fhd-plus-144hz-cmd.dtsi"
+#include "dsi-panel-k3s-42-02-0a-dsc-cmd.dtsi"
+#include "dsi-panel-k3s-42-02-0b-dsc-cmd.dtsi"
 #include "dsi-panel-ext-bridge-1080p.dtsi"
 #include "dsi-panel-sim-cmd.dtsi"
 #include "dsi-panel-sim-video.dtsi"
@@ -95,6 +97,76 @@
 			qcom,supply-max-voltage = <6000000>;
 			qcom,supply-enable-load = <100000>;
 			qcom,supply-disable-load = <100>;
+		};
+	};
+	
+	dsi_panel_pwr_supply_k3s: dsi_panel_pwr_supply_k3s {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+
+		qcom,panel-supply-entry@0 {
+			qcom,supply-disable-load = <0x50>;
+			qcom,supply-enable-load = <0xed1c>;
+			qcom,supply-max-voltage = <0x1b7740>;
+			qcom,supply-min-voltage = <0x1b7740>;
+			qcom,supply-name = "vddio";
+			qcom,supply-post-on-sleep = <0x0a>;
+			qcom,supply-pre-off-sleep = <0x04>;
+			reg = <0x00>;
+		};
+		qcom,panel-supply-entry@1 {
+			qcom,supply-disable-load = <0x50>;
+			qcom,supply-enable-load = <0xed1c>;
+			qcom,supply-max-voltage = <0x129da0>;
+			qcom,supply-min-voltage = <0x124f80>;
+			qcom,supply-name = "dvdd";
+			qcom,supply-post-on-sleep = <0x0a>;
+			reg = <0x01>;
+		};
+		qcom,panel-supply-entry@2 {
+			qcom,supply-disable-load = <0x00>;
+			qcom,supply-enable-load = <0x2710>;
+			qcom,supply-max-voltage = <0x2dc6c0>;
+			qcom,supply-min-voltage = <0x2dc6c0>;
+			qcom,supply-name = "vdd";
+			qcom,supply-post-on-sleep = <0x0a>;
+			reg = <0x02>;
+		};
+	};
+
+	dsi_panel_pwr_supply_k3s_second: dsi_panel_pwr_supply_k3s_second {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+
+		qcom,panel-supply-entry@0 {
+			qcom,supply-disable-load = <0x50>;
+			qcom,supply-enable-load = <0xed1c>;
+			qcom,supply-max-voltage = <0x1b7740>;
+			qcom,supply-min-voltage = <0x1b7740>;
+			qcom,supply-name = "vddio";
+			qcom,supply-post-on-sleep = <0x0a>;
+			qcom,supply-pre-off-sleep = <0x04>;
+			reg = <0x00>;
+		};
+
+		qcom,panel-supply-entry@1 {
+			qcom,supply-disable-load = <0x50>;
+			qcom,supply-enable-load = <0xed1c>;
+			qcom,supply-max-voltage = <0x107ac0>;
+			qcom,supply-min-voltage = <0x107ac0>;
+			qcom,supply-name = "dvdd";
+			qcom,supply-post-on-sleep = <0x0a>;
+			reg = <0x01>;
+		};
+
+		qcom,panel-supply-entry@2 {
+			qcom,supply-disable-load = <0x00>;
+			qcom,supply-enable-load = <0x2710>;
+			qcom,supply-max-voltage = <0x2dc6c0>;
+			qcom,supply-min-voltage = <0x2dc6c0>;
+			qcom,supply-name = "vdd";
+			qcom,supply-post-on-sleep = <0x0a>;
+			reg = <0x02>;
 		};
 	};
 
@@ -878,3 +950,5 @@
 		};
 	};
 };
+
+
